@@ -25,6 +25,7 @@ public class App
     //创建一个Excel工作簿
     @Test
     public void test() throws IOException {
+
         //定义一个工作簿
         Workbook wb = new HSSFWorkbook();
         //定义一个输出流
@@ -223,11 +224,10 @@ public class App
         cellStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
         cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
         cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
-        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+
 
         //合并单元格（起始行,结束行,起始列,结束列）
-        CellRangeAddress cra = new CellRangeAddress(3,4,1,3); // 起始行, 终止行, 起始列, 终止列
+        CellRangeAddress cra = new CellRangeAddress(3,4,1,2); // 起始行, 终止行, 起始列, 终止列
         sheet.addMergedRegion(cra);
         //设置合并单元格的边框样式
         RegionUtil.setBorderBottom(BorderStyle.THIN,cra,sheet);
@@ -851,98 +851,42 @@ public class App
         CellStyle cellStyle = wb.createCellStyle();//创建样式
         cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
         cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        Font font = wb.createFont(); //设置字体样式
+        font.setBold(true);
+        font.setFontHeightInPoints((short)16);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
 
         cell.setCellStyle(cellStyle);
 
         //创建第三行
         row = sheet.createRow(3);
 
-        //创建单元格1-检测报告
-        cell = row.createCell(15);
+        //创建一个单元格
+        cell = row.createCell(3);
+        cell.setCellValue("检测报告");
 
-
-
-        //合并单元格（起始行,结束行,起始列,结束列）
-        CellRangeAddress cra = new CellRangeAddress(3,3,14,22); // 起始行, 终止行, 起始列, 终止列
-        sheet.addMergedRegion(cra);
+        cellStyle = wb.createCellStyle();//创建样式
 
         //居中
-        cellStyle = wb.createCellStyle();//创建样式
         cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
         cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)11);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
 
+        //设置第一个单元格边框样式
         cellStyle.setBorderLeft(BorderStyle.THIN);
         cellStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
         cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
         cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
         cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
         cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        //设置边框样式
-        RegionUtil.setBorderBottom(BorderStyle.THIN,cra,sheet);
-        RegionUtil.setBottomBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
-        RegionUtil.setBorderLeft(BorderStyle.THIN,cra,sheet);
-        RegionUtil.setLeftBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
-        RegionUtil.setBorderTop(BorderStyle.THIN,cra,sheet);
-        RegionUtil.setTopBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
-        RegionUtil.setBorderRight(BorderStyle.THIN,cra,sheet);
-        RegionUtil.setRightBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
-
-        cell.setCellStyle(cellStyle);
-
-        //创建单元格2-销售发票信息
-        cell = row.createCell(23);
-
-        cell.setCellValue("销售发票信息");
 
         //合并单元格（起始行,结束行,起始列,结束列）
-        sheet.addMergedRegion(new CellRangeAddress(3,3,23,26));
-
-        //居中
-        cellStyle = wb.createCellStyle();//创建样式
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
-        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
-        //设置边框样式
-        cellStyle.setBorderRight(BorderStyle.THIN);
-        cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
-        cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
-        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cell.setCellStyle(cellStyle);
-
-        //创建单元格3-检测登记表
-        cell = row.createCell(27);
-
-        cell.setCellValue("检测登记表");
-
-        //合并单元格（起始行,结束行,起始列,结束列）
-        sheet.addMergedRegion(new CellRangeAddress(3,3,27,35));
-
-        //居中
-        cellStyle = wb.createCellStyle();//创建样式
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
-        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
-        //设置边框样式
-        cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
-        cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
-        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cell.setCellStyle(cellStyle);
-
-        //创建单元格4-缴款方式（地服转存、银行转账、微信、支付宝）
-        cell = row.createCell(36);
-        //Cell cell4 = row.createCell(36);
-        //cell4.setCellValue("");
-        cell.setCellValue("缴款方式（地服转存、银行转账、微信、支付宝）");
-
-        //合并单元格（起始行,结束行,起始列,结束列）
-        cra = new CellRangeAddress(3,4,36,36); // 起始行, 终止行, 起始列, 终止列
+        CellRangeAddress cra = new CellRangeAddress(3,3,3,5); // 起始行, 终止行, 起始列, 终止列
         sheet.addMergedRegion(cra);
-        //居中
-        cellStyle = wb.createCellStyle();//创建样式
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
-        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
-
         //设置合并单元格的边框样式
         RegionUtil.setBorderBottom(BorderStyle.THIN,cra,sheet);
         RegionUtil.setBottomBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
@@ -952,51 +896,194 @@ public class App
         RegionUtil.setTopBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
         RegionUtil.setBorderRight(BorderStyle.THIN,cra,sheet);
         RegionUtil.setRightBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
+
+        cell.setCellStyle(cellStyle);
+
+        //创建一个单元格
+        cell = row.createCell(6);
+        cell.setCellValue("缴款方式（地服转存、银行转账、微信、支付宝）");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)11);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
         //设置背景色
         cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
         cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-        cell.setCellStyle(cellStyle);
-        //cell4.setCellStyle(cellStyle);
-
-        //创建单元格5-现金缴款单（地服转存）
-        cell = row.createCell(37);
-        cell.setCellValue("现金缴款单（地服转存）");
-
-        //合并单元格（起始行,结束行,起始列,结束列）
-        sheet.addMergedRegion(new CellRangeAddress(3,3,37,40));
-
-        //居中
-        cellStyle = wb.createCellStyle();//创建样式
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
-        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
-        //设置边框样式
+        //设置第一个单元格边框样式
         cellStyle.setBorderRight(BorderStyle.THIN);
         cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
         cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
         cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
-        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cell.setCellStyle(cellStyle);
-
-        //创建单元格6-银行转账
-        cell = row.createCell(41);
-
-        cell.setCellValue("银行转账");
 
         //合并单元格（起始行,结束行,起始列,结束列）
-        sheet.addMergedRegion(new CellRangeAddress(3,3,41,43));
+        CellRangeAddress cra1 = new CellRangeAddress(3,4,6,6); // 起始行, 终止行, 起始列, 终止列
+        sheet.addMergedRegion(cra1);
+        //设置合并单元格的边框样式
+        RegionUtil.setBorderBottom(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setBottomBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+        RegionUtil.setBorderLeft(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setLeftBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+        RegionUtil.setBorderTop(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setTopBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+        RegionUtil.setBorderRight(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setRightBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+
+        cell.setCellStyle(cellStyle);
+
+        //创建第四行
+        row = sheet.createRow(4);
+        //创建一个单元格
+        cell = row.createCell(0);
+        cell.setCellValue("发票代码");
+
+        cellStyle = wb.createCellStyle();//创建样式
 
         //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.BOTTOM);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)9);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+        //设置背景色
+        cellStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+
+        cell.setCellStyle(cellStyle);
+
+        //创建一个单元格
+        cell = row.createCell(1);
+        cell.setCellValue("发票号码");
+
         cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.BOTTOM);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)9);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+        //设置背景色
+        cellStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+
+        cell.setCellStyle(cellStyle);
+
+        //创建一个单元格
+        cell = row.createCell(2);
+        cell.setCellValue("购方企业名称");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.BOTTOM);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)9);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+        //设置背景色
+        cellStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+
+        cell.setCellStyle(cellStyle);
+
+        //创建一个单元格
+        cell = row.createCell(3);
+        cell.setCellValue("姓名");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
         cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
         cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
-        //设置边框样式
-        cellStyle.setBorderRight(BorderStyle.THIN);
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)11);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+        //设置背景色
+        cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        //设置第一个单元格边框样式
+        cellStyle.setBorderLeft(BorderStyle.THIN);
+        cellStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderRight(BorderStyle.THIN); //设置边框样式
         cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
-        cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
-        cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
         cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
         cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+
+        cell.setCellStyle(cellStyle);
+
+        //创建一个单元格
+        cell = row.createCell(4);
+        cell.setCellValue("年龄");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)11);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+        //设置背景色
+        cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        //设置第一个单元格边框样式
+        cellStyle.setBorderLeft(BorderStyle.THIN);
+        cellStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderRight(BorderStyle.THIN); //设置边框样式
+        cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
+        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+
+        cell.setCellStyle(cellStyle);
+
+        //创建一个单元格
+        cell = row.createCell(5);
+        cell.setCellValue("检测编号");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)11);
+        font.setColor(IndexedColors.RED.getIndex());  //设置字体颜色
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+        //设置背景色
+        cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        //设置第一个单元格边框样式
+        cellStyle.setBorderLeft(BorderStyle.THIN);
+        cellStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderRight(BorderStyle.THIN); //设置边框样式
+        cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
+        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+
+        cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(6);
+        cell.setCellValue("");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        cellStyle.setBorderRight(BorderStyle.THIN);
+        cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
+        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+
         cell.setCellStyle(cellStyle);
 
         //定义一个输出流
@@ -1008,9 +1095,123 @@ public class App
 
     }
 
+    public void merge () throws IOException {
 
+        //定义一个工作簿
+        Workbook wb = new HSSFWorkbook();
+        //创建一个sheet
+        Sheet sheet = wb.createSheet("基因检测收入明细");
 
+        //创建标题行
+        Row row = sheet.createRow(1);
+
+        //创建一个单元格
+        Cell cell = row.createCell(0);
+        cell.setCellValue("江苏华生基因数据科技股份有限公司基因检测收入明细(0424)");
+
+        //合并单元格（起始行,结束行,起始列,结束列）
+        sheet.addMergedRegion(new CellRangeAddress(1,1,0,13));
+        //居中
+        CellStyle cellStyle = wb.createCellStyle();//创建样式
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        Font font = wb.createFont(); //设置字体样式
+        font.setBold(true);
+        font.setFontHeightInPoints((short)16);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+
+        cell.setCellStyle(cellStyle);
+
+        //创建第三行
+        row = sheet.createRow(3);
+
+        //创建一个单元格
+        cell = row.createCell(3);
+        cell.setCellValue("检测报告");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)11);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+
+        //设置第一个单元格边框样式
+        cellStyle.setBorderLeft(BorderStyle.THIN);
+        cellStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
+        cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderBottom(BorderStyle.THIN); //设置边框样式
+        cellStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+
+        //合并单元格（起始行,结束行,起始列,结束列）
+        CellRangeAddress cra = new CellRangeAddress(3,3,3,5); // 起始行, 终止行, 起始列, 终止列
+        sheet.addMergedRegion(cra);
+        //设置合并单元格的边框样式
+        RegionUtil.setBorderBottom(BorderStyle.THIN,cra,sheet);
+        RegionUtil.setBottomBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
+        RegionUtil.setBorderLeft(BorderStyle.THIN,cra,sheet);
+        RegionUtil.setLeftBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
+        RegionUtil.setBorderTop(BorderStyle.THIN,cra,sheet);
+        RegionUtil.setTopBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
+        RegionUtil.setBorderRight(BorderStyle.THIN,cra,sheet);
+        RegionUtil.setRightBorderColor(IndexedColors.BLACK.getIndex(),cra,sheet);
+
+        cell.setCellStyle(cellStyle);
+
+        //创建一个单元格
+        cell = row.createCell(6);
+        cell.setCellValue("缴款方式（地服转存、银行转账、微信、支付宝）");
+
+        cellStyle = wb.createCellStyle();//创建样式
+
+        //居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置单元格水平方向对其方式
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);//设置单元格垂直方向对其方式
+        font = wb.createFont(); //设置字体样式
+        font.setFontHeightInPoints((short)11);
+        font.setFontName("宋体");
+        cellStyle.setFont(font);
+        //设置背景色
+        cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        //设置第一个单元格边框样式
+        cellStyle.setBorderRight(BorderStyle.THIN);
+        cellStyle.setRightBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+        cellStyle.setBorderTop(BorderStyle.THIN); //设置边框样式
+        cellStyle.setTopBorderColor(IndexedColors.BLACK.getIndex()); //设置边框颜色
+
+        //合并单元格（起始行,结束行,起始列,结束列）
+        CellRangeAddress cra1 = new CellRangeAddress(3,4,6,6); // 起始行, 终止行, 起始列, 终止列
+        sheet.addMergedRegion(cra1);
+        //设置合并单元格的边框样式
+        RegionUtil.setBorderBottom(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setBottomBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+        RegionUtil.setBorderLeft(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setLeftBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+        RegionUtil.setBorderTop(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setTopBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+        RegionUtil.setBorderRight(BorderStyle.THIN,cra1,sheet);
+        RegionUtil.setRightBorderColor(IndexedColors.BLACK.getIndex(),cra1,sheet);
+
+        cell.setCellStyle(cellStyle);
+
+        //定义一个输出流
+        FileOutputStream fileOutputStream = new FileOutputStream("./src/main/resources/static/excels/merge.xls");
+        //写入在输出流
+        wb.write(fileOutputStream);
+        //关闭输出流
+        fileOutputStream.close();
+
+    }
 
 }
+
+
+
 
 
