@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5e8244b-8470-4050-a7e1-5fc14cc115a7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/poi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/excels/daily.xls" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/excels/daily.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/excels/财务报表.xls" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,17 +23,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="1203" column="106" selection-start-line="1203" selection-start-column="106" selection-end-line="1203" selection-end-column="106" />
+            <state relative-caret-position="152">
+              <caret line="1094" lean-forward="true" selection-start-line="1094" selection-end-line="1094" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#calculate#0;class#App#0" />
                 <element signature="method#daily#0;class#App#0" />
                 <element signature="method#setCell#0;class#App#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="136" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -60,6 +70,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/App.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -107,6 +118,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,9 +149,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -211,7 +222,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="App.date" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="App.merge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="poi" />
       <extension name="coverage">
         <pattern>
@@ -223,7 +234,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.example" />
       <option name="MAIN_CLASS_NAME" value="com.example.App" />
-      <option name="METHOD_NAME" value="date" />
+      <option name="METHOD_NAME" value="merge" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -331,17 +342,17 @@
     <list>
       <item itemvalue="JUnit.App.mergeCells" />
       <item itemvalue="JUnit.App.daily" />
-      <item itemvalue="JUnit.App.date" />
       <item itemvalue="JUnit.App.calculate" />
       <item itemvalue="JUnit.App.practice" />
+      <item itemvalue="JUnit.App.merge" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.App.practice" />
+        <item itemvalue="JUnit.App.merge" />
         <item itemvalue="JUnit.App.mergeCells" />
         <item itemvalue="JUnit.App.daily" />
         <item itemvalue="JUnit.App.calculate" />
-        <item itemvalue="JUnit.App.date" />
       </list>
     </recent_temporary>
   </component>
@@ -361,44 +372,45 @@
       <workItem from="1525771557524" duration="448000" />
       <workItem from="1525830565288" duration="2936000" />
       <workItem from="1525833669197" duration="1805000" />
-      <workItem from="1525836255817" duration="60000" />
+      <workItem from="1525836255817" duration="607000" />
+      <workItem from="1526001843281" duration="2205000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="App_mergeCells - 2018.05.09 at 10h 29m 22s.xml">
-      <configuration name="App.mergeCells" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="App_mergeCells - 2018.05.09 at 10h 30m 18s.xml">
-      <configuration name="App.mergeCells" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 31m 29s.xml">
+    <history-entry file="App_practice - 2018.05.11 at 09h 40m 13s.xml">
       <configuration name="App.practice" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 33m 13s.xml">
+    <history-entry file="App_practice - 2018.05.11 at 09h 41m 59s.xml">
       <configuration name="App.practice" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 36m 19s.xml">
+    <history-entry file="App_practice - 2018.05.11 at 09h 45m 44s.xml">
       <configuration name="App.practice" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 42m 02s.xml">
+    <history-entry file="App_practice - 2018.05.11 at 09h 48m 06s.xml">
       <configuration name="App.practice" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 43m 33s.xml">
-      <configuration name="App.practice" configurationId="JUnit" />
+    <history-entry file="App_merge - 2018.05.11 at 09h 49m 11s.xml">
+      <configuration name="App.merge" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 44m 38s.xml">
-      <configuration name="App.practice" configurationId="JUnit" />
+    <history-entry file="App_merge - 2018.05.11 at 09h 51m 49s.xml">
+      <configuration name="App.merge" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 44m 54s.xml">
-      <configuration name="App.practice" configurationId="JUnit" />
+    <history-entry file="App_merge - 2018.05.11 at 09h 52m 40s.xml">
+      <configuration name="App.merge" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="App_practice - 2018.05.09 at 10h 47m 05s.xml">
+    <history-entry file="App_merge - 2018.05.11 at 09h 53m 20s.xml">
+      <configuration name="App.merge" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="App_merge - 2018.05.11 at 09h 55m 31s.xml">
+      <configuration name="App.merge" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="App_practice - 2018.05.11 at 09h 58m 00s.xml">
       <configuration name="App.practice" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42896000" />
+    <option name="totallyTimeSpent" value="45648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,32 +427,32 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286517" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3280116" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.54353935" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.13483146" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36516854" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23595506" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985955" visible="true" weight="0.1795422" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985955" visible="true" weight="0.18168813" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" sideWeight="0.5014045" side_tool="true" weight="0.2532189" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" sideWeight="0.5020576" side_tool="true" weight="0.2532189" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32946298" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3280116" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,10 +463,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12236">
+          <caret line="1104" column="15" selection-start-line="1104" selection-start-column="15" selection-end-line="1104" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calculate#0;class#App#0" />
+            <element signature="method#daily#0;class#App#0" />
+            <element signature="method#setCell#0;class#App#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -594,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -620,14 +638,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="1203" column="106" selection-start-line="1203" selection-start-column="106" selection-end-line="1203" selection-end-column="106" />
+        <state relative-caret-position="152">
+          <caret line="1094" lean-forward="true" selection-start-line="1094" selection-end-line="1094" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#calculate#0;class#App#0" />
             <element signature="method#daily#0;class#App#0" />
             <element signature="method#setCell#0;class#App#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="136" selection-end-column="6" />
         </state>
       </provider>
     </entry>
